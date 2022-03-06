@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Comunicação sem regras - Vem chegando!</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Movimento Pós-modernista, uma forma diferente de comunicar">
+    <meta name="keywords" content="pós-modernismo, história, design, arte, movimento, tropicália, tropicalismo, bossa nova, estética, função, Brasil, brasileiro">
+    <meta name="author" content="Letícia Dessordi Sudbrack">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <main>
+
+      <!-- [Seção 01] Cabeçalho principal no topo na página -->
+      <header>
+        <!-- Colunas paralelas coloridas -->
+        <div class="colunasColoridas">
+          <span class="colunaCabecalho colunaTipo1" id="coluna01"></span>
+          <span class="colunaCabecalho colunaTipo2" id="coluna02"></span>
+          <span class="colunaCabecalho colunaTipo1" id="coluna03"></span>
+          <span class="colunaCabecalho colunaTipo2" id="coluna04"></span>
+          <span class="colunaCabecalho colunaTipo1" id="coluna05"></span>
+          <span class="colunaCabecalho colunaTipo2" id="coluna06"></span>
+          <span class="colunaCabecalho colunaTipo1" id="coluna07"></span>
+        </div>
+
+        <!-- Sobreposição com círculos e texto-->
+        <section>
+          <!-- Círculos alinhados na diagonal -->
+          <div>
+            <img id="elipse01" src="./imagens/elipse01.png">
+            <img id="elipse02" src="./imagens/elipse02.png">
+            <img id="elipse03" src="./imagens/elipse03.png">
+          </div>
+
+          <!-- Título principal -->
+          <div id="divTitulo">
+            <h1 class="titulo d-flex"><span class="pos">Pós</span> <span class="modern">modern</span> <span class='ismo'>ismo</span></h1>
+          </div>
+        </section>
+      </header>
+
+      <!-- [Seção 02] Imagem de fundo e playlist do Spotify -->
+      <section>
+        <div class="d-flex justify-center" id="divQuadro">
+          <!-- iframe de carregamento de playlist do spotify-->
+          <div class="quadroPlaylist">
+            <h2 class="titulo2A">Nossa gente</h2>
+            <iframe src="https://open.spotify.com/embed/playlist/3Q04LG6cxNErqRfopSycAx" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- [Seção 03] Texto e imagem em elipse -->
+      <section>
+        <div class="d-flex" id="divTexto">
+
+          <!-- Coluna de texto -->
+          <div class="d-block colunaTexto">
+            <h2 class="titulo2B">Pós job</h2>
+            <p class="texto1">torrada ou café</p>
+            <p class="texto2">a tropicália na música e história da nossa persona, nosso Brasil.</p>
+          </div>
+
+          <!-- Coluna de imagem -->
+          <div class="backgroundElipse"></div>
+
+        </div>
+      </section>
+
+      <!-- [Seção 04] Blocos de música do Spotify -->
+      <div class="d-flex" id="divMusicas">
+        <div class="musica"><iframe src="https://open.spotify.com/embed/track/2HrocmoGvXltItP4LtueVH?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe></div>
+        <div class="musica"><iframe src="https://open.spotify.com/embed/track/3dDVLUMISlTSWXUGhwgTWt?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe></div>
+        <div class="musica"><iframe src="https://open.spotify.com/embed/track/0h7fUiPe6SJXD92UvN74Fo?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe></div>
+        <div class="musica"><iframe src="https://open.spotify.com/embed/track/3XxUGzfcyOYFiV86mQcKSy?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe></div>
+      </div>
+
+      <!-- [Rodapé da página]-->
+      <footer>
+        <div class="rodape">
+          <p>Pós-modernismo, comunicação sem regras. componente currícular de história da arte, curso de design, segundo período.</p>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+
+      $(document).ready(function(){
+
+        /** Quando o mouse estiver sob o título... */
+        $("#divTitulo").hover(function(){
+
+          /** Alinha todas as colunas coloridas ao topo da página **/
+          $(".colunaCabecalho").animate({'margin-top': '0'});
+
+          /** Posiciona todas as elipses sob o mesmo ponto, alinhadas **/
+          $("#elipse02").animate({
+            'top': '10%',
+            'left': '28%'
+          });
+          $("#elipse03").animate({
+            'top': '10%',
+            'left': '28%'
+          });
+
+          /** Oculta o texto "Pós" e atribui fundo colorido ao "Modern" **/
+          $(".pos").hide();
+          $(".modern").css("background-color", "var(--cor-04)");
+
+        /** Ao remover o mouse do título... */
+        }, function(){
+
+          /** Posiciona todas as colunas com aleatoriedade **/
+          $("#coluna02").animate({'margin-top': '3rem'});
+          $("#coluna03").animate({'margin-top': '1rem'});
+          $("#coluna04").animate({'margin-top': '4rem'});
+          $("#coluna05").animate({'margin-top': '3rem'});
+          $("#coluna06").animate({'margin-top': '8rem'});
+          $("#coluna07").animate({'margin-top': '5rem'});
+
+          /** Retorna a posição diagonal das elipses **/
+          $("#elipse02").animate({
+            'top': '30%',
+            'left': '18%'
+          });
+          $("#elipse03").animate({
+            'top': '50%',
+            'left': '8%'
+          });
+
+          /** Apresenta o texto "Pós" e remove o fundo colorido do "Modern" **/
+          $(".pos").show();
+          $(".modern").css("background-color", "transparent");
+        });
+      });
+      
+    </script>
+
+  </body>
+</html>
